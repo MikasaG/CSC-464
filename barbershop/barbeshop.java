@@ -101,6 +101,7 @@ public class barbeshop {
 			threads[i] = new Thread(c);
 		}
 		long startTime = System.currentTimeMillis(); 
+		long beforeUsedMem=Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory();
 		for(int i = 0; i < threads.length; i++){
 				  threads[i].start();
 				  try {
@@ -116,9 +117,11 @@ public class barbeshop {
 				  e.printStackTrace();
 			  }
 		}
+		long afterUsedMem=Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory();
 		long endTime=System.currentTimeMillis(); //get end time
 		System.out.println("Time Cost "+(endTime-startTime)+"ms");	
-		
+		System.out.println("Memory Usage :"+(afterUsedMem-beforeUsedMem)/(1024.0 * 1024.0)+" MB");	
+
 		
 		
 	}

@@ -128,6 +128,7 @@ public class readwrite_nonstarvation {
 		List<Thread> l = Arrays.asList(threads);
 		Collections.shuffle(l);
 		long startTime = System.currentTimeMillis(); 
+		long beforeUsedMem=Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory();
 		for(int i = 0; i < l.size(); i++){
 				  l.get(i).start();
 		}
@@ -138,6 +139,7 @@ public class readwrite_nonstarvation {
 				  e.printStackTrace();
 			  } 
 		}
+		long afterUsedMem=Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory();
 		long endTime=System.currentTimeMillis(); //get end time
 		long readerTotal = 0,writerTotal = 0,readerLongest=0,writerLongest=0;
 		for (int i = 0;i<readerWaitTime.size();i++) {
@@ -161,5 +163,6 @@ public class readwrite_nonstarvation {
 		System.out.println("Writder average waiting time "+writerAverage+"ms");	
 		System.out.println("Reader longest waiting time "+readerLongest+"ms");	
 		System.out.println("Writerder longest waiting time "+writerLongest+"ms");	
+		System.out.println("Memory Usage :"+(afterUsedMem-beforeUsedMem)/(1024.0 * 1024.0)+" MB");	
 	}
 }

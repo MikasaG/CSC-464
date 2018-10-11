@@ -218,6 +218,7 @@ public class smoker {
 		threads[7] = new Thread(new Smoker_WithPaper());
 		threads[8] = new Thread(new Smoker_WithMatch());
 		long startTime = System.currentTimeMillis(); 
+		long beforeUsedMem=Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory();
 		for(int i = 0; i < threads.length; i++){
 				  threads[i].start();
 		}
@@ -230,8 +231,10 @@ public class smoker {
 		}*/
 		while (true) {
 			if (finish) {
+				long afterUsedMem=Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory();
 				long endTime=System.currentTimeMillis(); //get end time
 				System.out.println("Time Cost "+(endTime-startTime)+"ms");	
+				System.out.println("Memory Usage :"+(afterUsedMem-beforeUsedMem)/(1024.0 * 1024.0)+" MB");	
 				break;
 			}
 		}

@@ -91,6 +91,7 @@ public class h20 {
 		int hydrogen_num = 0;
 		ThreadGroup tg = new ThreadGroup("total");
 		long startTime = System.currentTimeMillis(); 
+		long beforeUsedMem=Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory();
 		for (int i=0; i<water_num*3;i++) {
 			int ran = rand.nextInt(3);
 			if ((ran == 0 && oxygen_num <water_num) || hydrogen_num == water_num*2) {
@@ -113,7 +114,9 @@ public class h20 {
 				  e.printStackTrace();
 			  }
 		}
+		long afterUsedMem=Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory();
 		long endTime=System.currentTimeMillis(); //get end time
 		System.out.println("Time Cost "+(endTime-startTime)+"ms");
+		System.out.println("Memory Usage :"+(afterUsedMem-beforeUsedMem)/(1024.0 * 1024.0)+" MB");	
 	}
 }
