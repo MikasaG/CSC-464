@@ -36,7 +36,6 @@ I wrote separate test units for all three basic functions, ensure they work prop
 **Scenario 1:**
 - Diagram:
 ![](https://raw.githubusercontent.com/MikasaG/CSC-464/master/Assignment%202/Vector%20Clock/images/s1-diagram.png)
-
 - Testing Result:
 ![Testing Result for Scenario 1](https://raw.githubusercontent.com/MikasaG/CSC-464/master/Assignment%202/Vector%20Clock/images/s1%20result.png)
 
@@ -50,12 +49,10 @@ I wrote separate test units for all three basic functions, ensure they work prop
 We know that vector clock can identify both "happens before" relationship and causally concurrent relationship. That is:
 
 
- $$ a\quad happens\quad before\quad   b
-\Leftrightarrow
- VC_a < VC_b $$
+ $$ a\quad happens\quad before\quad   b \Leftrightarrow VC_a < VC_b $$
 where VCa < VCb means each VCa[i] is less than or equal to VCb[i] (for all i, VCa[i] <= VCb[i]).
 
 So, we can determine the relationship of  any two events by using vector clock. If we can find VCa < VCb or VCb < VCa, then we can conclude that there is a happens before relationship. If not, these two events are causally concurrent.
 
-For example, in the scenario, I indicated  two typical pairs of these relationships.
+For example, in the scenario, I indicated two typical pairs of these relationships.
 ![](https://github.com/MikasaG/CSC-464/blob/master/Assignment%202/Vector%20Clock/images/s2-diagram.svg.png?raw=true)
