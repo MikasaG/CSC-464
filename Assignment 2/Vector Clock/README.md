@@ -48,7 +48,7 @@ I wrote separate test units for all three basic functions, ensure they work prop
 # "Happens Before" Vs. Causally Concurrent
 We know that vector clock can identify both "happens before" relationship and causally concurrent relationship. That is:
 
-a happens before b  <==> VC_a < VC_b 
+a happens before b  <==> VCa < VCb 
 
 where VCa < VCb means each VCa[i] is less than or equal to VCb[i] (for all i, VCa[i] <= VCb[i]).
 
