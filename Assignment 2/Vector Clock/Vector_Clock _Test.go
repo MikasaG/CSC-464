@@ -130,7 +130,7 @@ func Scenario_1() {
 	if vc3.vector[threads[0]] != 5 || vc3.vector[threads[1]] != 3 || vc3.vector[threads[2]] != 3 {
 		fmt.Printf("Incorrect values: Expected 5,3,3 but got %d,%d,%d\n\n", vc1.vector[threads[0]], vc1.vector[threads[1]], vc1.vector[threads[2]])
 	} else {
-		fmt.Printf("Result of Scenario 1 is as expected.\n\n")
+		fmt.Printf("Thread 1 has a resulting vector of [5,3,3],which is as expected\n\n")
 	}
 
 }
@@ -179,7 +179,7 @@ func Scenario_2() {
 	if vc1.vector[threads[0]] != 4 || vc1.vector[threads[1]] != 5 || vc1.vector[threads[2]] != 5 {
 		fmt.Printf("Incorrect values: Expected 4,5,5 but got %d,%d,%d\n", vc1.vector[threads[0]], vc1.vector[threads[1]], vc1.vector[threads[2]])
 	} else {
-		fmt.Printf("Result of Scenario 2 is as expected.\n")
+		fmt.Printf("Thread A has a resulting vector of [4,5,5],which is as expected.\n\n")
 	}
 
 }
